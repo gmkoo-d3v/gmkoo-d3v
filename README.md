@@ -132,5 +132,5 @@ POC 프로젝트 (3인) | 2026.01
 👉 [GitHub (포크)](https://github.com/gmkoo-d3v/AIPOC) · [원본](https://github.com/Bjs-coder-kr/AIPOC)
 
 ---
-### 블로그
-👉 [GitHub](https://gmkoo-d3v.github.io/blog/) 
+<!--### 블로그
+👉 [GitHub](https://gmkoo-d3v.github.io/blog/) -->
