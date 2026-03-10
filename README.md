@@ -14,13 +14,14 @@
     <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-vercel-olive.vercel.app/api?username=gmkoo-d3v&show_icons=true&theme=tokyonight" />
     <img height="180" src="https://github-readme-stats-vercel-olive.vercel.app/api?username=gmkoo-d3v&show_icons=true" alt="GitHub Stats" />
   </picture>
+</div>
+
+<div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-vercel-olive.vercel.app/api/top-langs/?username=gmkoo-d3v&layout=compact&theme=tokyonight" />
     <img height="180" src="https://github-readme-stats-vercel-olive.vercel.app/api/top-langs/?username=gmkoo-d3v&layout=compact" alt="Top Langs" />
   </picture>
 </div>
-
-<br />
 
 <div align="center">
   <picture>
