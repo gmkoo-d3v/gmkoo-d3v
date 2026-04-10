@@ -122,7 +122,7 @@ RSS 수집 → LLM 감성분석 → RAG 질의응답 → 실사 거래 연동
 ### 🔍 Documind — AI 기반 문서 분석 RAG 시스템
 > ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white) ![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B35?style=flat-square) ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=flat-square&logo=sqlite&logoColor=white)
 
-POC 프로젝트 (3인) | 2026.01 10회
+POC 프로젝트 (3인) | 2026.01
 
 - 가중치 기반 하이브리드 검색(Embedding 0.6 + BM25 0.4)으로 검색 정확도 향상
 - 벡터 스토어 장애 상황에 대비한 폴백(fallback) 경로 구축으로 서비스 연속성 확보
@@ -137,7 +137,7 @@ POC 프로젝트 (3인) | 2026.01 10회
 ### 🧭 ZeniManager — AI 기반 취업 지원 상담 관리 시스템
 > ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white) ![Electron](https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white) ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
 
-팀 프로젝트 (5인) | 2026.03.25 ~ 26.03.31 5일
+팀 프로젝트 (5인) | 2026.03
 
 **담당 역할 및 구현 내용**
 - **대시보드 고도화**: 상담사별 KPI/통계, 캘린더, 메모(포스트잇) 기능을 설계·구현하고 대시보드 API 모듈을 분리해 업무 흐름과 유지보수성을 함께 개선.
