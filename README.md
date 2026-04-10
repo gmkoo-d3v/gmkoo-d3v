@@ -130,7 +130,7 @@ POC 프로젝트 (3인) | 2026.01
 - SQLite 기반 메타데이터 관리 체계 도입으로 문서 추적성과 운영 효율 향상
 
 
-👉 [GitHub](https://github.com/Bjs-coder-kr/AIPOC)
+👉 [GitHub](https://github.com/gmkoo-d3v/AIPOC)
 
 ---
 
