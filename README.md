@@ -122,7 +122,7 @@ RSS 수집 → LLM 감성분석 → RAG 질의응답 → 실사 거래 연동
 ### 🔍 Documind — AI 기반 문서 분석 RAG 시스템
 > ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white) ![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B35?style=flat-square) ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=flat-square&logo=sqlite&logoColor=white)
 
-POC 프로젝트 (3인) | 2026.01
+POC 프로젝트 (3인) | 2026.01 10회
 
 - 가중치 기반 하이브리드 검색(Embedding 0.6 + BM25 0.4)으로 검색 정확도 향상
 - 벡터 스토어 장애 상황에 대비한 폴백(fallback) 경로 구축으로 서비스 연속성 확보
@@ -133,5 +133,22 @@ POC 프로젝트 (3인) | 2026.01
 👉 [GitHub (포크)](https://github.com/gmkoo-d3v/AIPOC)
 
 ---
+
+### 🧭 ZeniManager — AI 기반 취업 지원 상담 관리 시스템
+> ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white) ![Electron](https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white) ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+
+팀 프로젝트 (5인) | 2026.03.25 ~ 26.03.31 5일
+
+**담당 역할 및 구현 내용**
+- **대시보드 고도화**: 상담사별 KPI/통계, 캘린더, 메모(포스트잇) 기능을 설계·구현하고 대시보드 API 모듈을 분리해 업무 흐름과 유지보수성을 함께 개선.
+- **유사 성공사례 검색**: 상담자 상세 페이지에서 `Supabase pgvector` 기반 취업 성공사례 유사검색 POC를 구현하고, 연령대/이름 마스킹 규칙을 적용해 개인정보 노출을 최소화.
+- **보안/권한 강화**: 상담사 소유 boundary 기반 데이터 접근 제어를 적용하고, 상담사별 클라이언트 API 호출 보안을 강화.
+- **인증 안정화**: Electron 환경에서 Supabase 세션 복구 흐름을 정비해 재로그인/유휴 상태 이후 인증 끊김 이슈를 완화.
+
+> 💡 **한 줄 요약**
+> ZeniManager에서 상담사 대시보드, 메모/캘린더, 유사 성공사례 벡터 검색, 권한 보안, Electron 세션 안정화를 중심으로 프론트엔드와 운영 품질을 고도화했습니다.
+
+👉 [GitHub Repository](https://github.com/SuranS2/ZeniManager)
+
 <!--### 블로그
 👉 [GitHub](https://gmkoo-d3v.github.io/blog/) -->
