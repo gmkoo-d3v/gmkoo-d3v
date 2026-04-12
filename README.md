@@ -2,9 +2,9 @@
 
  끊임없이 탐구하며, 기술을 도구 삼아 아이디어를 현실로 구현하는 것을 즐기는 성격입니다.
 
----
-<!-- ![](https://komarev.com/ghpvc/?username=gmkoo-d3v&color=blue) -->
 
+<!-- ![](https://komarev.com/ghpvc/?username=gmkoo-d3v&color=blue) -->
+<!--
 ## 🛠 Tech Stack
 
 | Category | Technologies |
@@ -14,6 +14,8 @@
 | **AI / Data** | ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white) ![Spring AI](https://img.shields.io/badge/Spring_AI-6DB33F?style=flat-square&logo=spring&logoColor=white) ![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B35?style=flat-square) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) |
 | **Database** | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=flat-square&logo=sqlite&logoColor=white) |
 | **Infra** | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white) |
+-->
+
 ---
 
 
