@@ -1,6 +1,7 @@
 # 안녕하세요.
 
- 끊임없이 탐구하며, 기술을 도구 삼아 아이디어를 현실로 구현하는 것을 즐기는 성격입니다.
+LLM 협업 방법론을 직접 설계하고, 
+AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 
 
 <!-- ![](https://komarev.com/ghpvc/?username=gmkoo-d3v&color=blue) -->
@@ -77,14 +78,14 @@ POC 프로젝트 (3인) | 2026.01
  
 개발 생산성/품질 표준화 스킬 | Skills
 
-**담당 역할 및 구현 내용**
-- **아키텍처 가이드 제공**: SOLID, DRY, KISS, YAGNI 기반으로 설계·리팩터링·리뷰·디버깅 전반에 일관된 판단 기준을 정립.
-- **문서 중심 워크플로우 설계**: `docs/task`, `plan`, `decision`, `report`, `shadow` 구조를 기준으로 작업 이력과 의사결정을 체계화.
-- **멀티 에이전트 협업 체계 정립**: 메인 스레드는 supervising lead architect, 서브에이전트는 계획·리뷰·구현·검증 역할로 분리해 협업 효율을 높임.
-- **품질 검증 기준 강화**: 문서 검증, runtime validation, config-first, deterministic test 원칙을 통해 변경 안정성과 운영 신뢰도를 확보.
+**구현 내용**
+- **아키텍처 가이드 제공**: SOLID, DRY, KISS, YAGNI 기반으로 설계, 리팩터링, 리뷰, 디버깅 전반의 일관된 판단 기준을 제공합니다.
+- **문서 중심 워크플로우 설계**: docs/task, plan, decisions, report, shadow, orchestration를 기준으로 작업 이력, 의사결정, 협업 상태를 체계화합니다.
+- **멀티 에이전트 협업 체계 정립**: 메인 스레드는 supervising lead architect, 서브에이전트는 계획, 리뷰, 구현, 검증 역할로 분리해 협업 효율을 높입니다.
+- **품질 검증 기준 강화**: 문서 검증, runtime validation, config-first, deterministic test 원칙을 통해 변경 안정성과 운영 신뢰도를 높입니다.
 
 > 💡 **한 줄 요약**
-> CodeGuide는 아키텍처 원칙, 문서 lifecycle, 서브에이전트 협업, 검증 규칙을 하나의 workflow로 묶어 프로젝트의 품질과 유지보수성을 높이는 엔지니어링 스킬입니다.
+> CodeGuide는 파일 기반 workspace docs를 system of record로 삼아, 세션 단위 컨텍스트 한계를 완화하고 의사결정 추적, 멀티 에이전트 협업, 검증 기준을 일관되게 운영하는 컨텍스트 엔지니어링 프레임워크입니다.
 
 👉 [GitHub Repository](https://github.com/gmkoo-d3v/codeguide)
 
