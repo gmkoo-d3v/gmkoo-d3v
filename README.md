@@ -116,9 +116,10 @@ POC 프로젝트 (3인) | 2026.01
 </div>
 
 ## 🏆 GitHub Trophies
-<div align="center">
-  <img src="./assets/trophy.svg" alt="GitHub Trophies" />
-</div>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/trophy-dark.svg" />
+  <img src="./assets/trophy-light.svg" alt="GitHub Trophies" />
+</picture>
 
 ## 📈 Activity Graph
 
