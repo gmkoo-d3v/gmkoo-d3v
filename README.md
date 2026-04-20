@@ -29,14 +29,15 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 
 **담당 역할 및 구현 내용**
 - **AI 연동/가용성 개선**: MFDS 공공 API 장애/타임아웃 시 `Spring AI + OpenAI` 기반 약물 검색 Fallback 구현, `GET /api/medications/search/ai` 엔드포인트 추가로 자동/수동 AI 검색 흐름 통합.
+- **AI 보안 / 가드레일 설계**: 프롬프트 인젝션 방어 및 API 비용 누수를 막기 위해 8계층 다층 방어(L1~L8) 아키텍처 고안. 의도 판별(Intent) 캐싱, Redis 카운터 기반 3진 아웃제, Canary Token(킬스위치)을 융합하여 악성 트래픽을 시스템적으로 원천 차단.
 - **프론트엔드 주도 개발**: React + Vite + Zustand 기반 구조 설계/구현, `zustand/shallow` + `React.memo` + 스토어 캐싱으로 대시보드 초기 로딩 **40% 단축** 및 탭 전환 **Zero-Latency** 구현.
 - **백엔드 기능 개발**: 가족 그룹/초대 관리 및 질병 정보 도메인(CRUD) 중심 비즈니스 로직 구현.
 - **리포트 기능**: 지병/복약 목록/최근 30일(당일 제외) 순응도(약별·전체 파이 차트) 포함 PDF 생성, 한글 폰트 임베딩(OpenPDF)·
-- **성능 최적화**: MyBatis 일괄 조회 기반 N+1 개선으로 쿼리 **197개 -> 3개 (98.5% 감소)**.
+- **성능 최적화**: 백엔드 예외 처리(Fail-Safe): 알림 시스템 정책 오류 시, DB 스키마 롤백 없이 Redis 기반 상태 오버레이(State Overlay) 로직을 우회 구축하여 무중단 이슈 해결.
 - **캐싱**: Redis(TTL 24h) 적용으로 AI 약물 검색 속도 **70% 향상** (`2.5s -> 0.75s`).
 
 > 💡 **한 줄 요약**
-> 가족 중심 어르신 복약 플랫폼 AMApill에서, MFDS 장애 대응 AI Fallback·프론트 성능 최적화(40%)·Redis 캐싱(70%)·N+1 개선(98.5%)을 중심으로 Full-Stack 기능을 구현했습니다.
+> 가족 중심 어르신 복약 플랫폼 AMApill에서, 8계층 AI 가드레일 보안설계·MFDS 장애 대응 AI Fallback·프론트 성능 최적화(40%)·Redis 캐싱(70%)·N+1 개선(98.5%)을 중심으로 Full-Stack 기능을 구현했습니다.
 
 👉 [GitHub Organization](https://github.com/KOSA2025-FINAL-PROJECT-TEAM3)
 
