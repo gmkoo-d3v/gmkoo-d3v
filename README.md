@@ -119,8 +119,8 @@ POC 프로젝트 (3인) | 2026.01
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-trophy-vercel.vercel.app/?username=gmkoo-d3v&margin-w=15&theme=discord" />
-    <img src="https://github-profile-trophy-vercel.vercel.app/?username=gmkoo-d3v&margin-w=15" alt="GitHub Trophies" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-trophy-private-cyan.vercel.app/?username=gmkoo-d3v&margin-w=15&theme=discord" />
+    <img src="https://github-profile-trophy-private-cyan.vercel.app/?username=gmkoo-d3v&margin-w=15" alt="GitHub Trophies" />
   </picture>
 </div>
 
