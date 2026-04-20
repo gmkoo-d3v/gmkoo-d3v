@@ -13,8 +13,8 @@ jobs:
         uses: Erik-Donath/github-profile-trophy@feature/generate-svg
         with:
           username: gmkoo-d3v
-          output_path: assets/trophy.svg
           token: ${{ secrets.GITHUB_TOKEN }}
+          theme: discord
       - name: Commit and push
         run: |
           mkdir -p assets
