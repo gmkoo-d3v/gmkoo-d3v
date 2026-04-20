@@ -1,12 +1,12 @@
 # Ignore everything by default
 *
-
 # Keep the profile README tracked
 !README.md
-
 # Keep this file tracked so the rule is shared
 !.gitignore
-
 # Keep GitHub Actions workflows tracked
 !.github/
 !.github/**
+# Keep assets tracked
+!assets/
+!assets/**
