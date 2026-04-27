@@ -75,7 +75,7 @@ POC 프로젝트 (3인) | 2026.01
 👉 [GitHub Repository](https://github.com/SuranS2/ZeniManager)
 
 ---
-### 🧭 CodeGuide — 프로덕션급 아키텍처·코드 품질 엔지니어링 스킬
+### 🧭 CodeGuide — 아키텍처·코드 품질 엔지니어링 스킬
  
 개발 생산성/품질 표준화 스킬 | Skills
 
