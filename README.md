@@ -28,8 +28,8 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
  
 부트캠프 3차 팀 프로젝트 (3인) | 2025.11 ~ 2025.12 | Backend 설계 · AI 연동 · Frontend 성능 최적화 담당
  
----
- 
+</br>
+
 #### 주요 성과
  
 | 항목 | Before | After | 개선 |
@@ -38,16 +38,17 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 | 대시보드 초기 로딩 | 2.5초 | 1.5초 | **40%↓** |
 | 약물 검색 재조회 | 외부 API/AI 재호출 | Redis cache hit | **동일 약물명 재검색 시 Redis cache hit으로 즉시 응답** |
  
----
+<br>
  
 #### 담당 구현
  
 **Backend**
- 
+ <br>
 - **N+1 개선** — 복약 로그 조회 API 루프 내 `findById()` 단건 호출을 MyBatis IN절 + Map 일괄 조회로 재설계. 90건 기준 쿼리 197개 → 3개 (98.5%↓), 응답 3~5초 → 0.5초 이하 (Issue #112)
 - **알림 Fail-Safe** — 알림 정책 오류 시 `shouldSend` 예외를 false로 처리(Block-by-default), DB 스키마 변경 없이 Redis State Overlay로 우회. 오발송·누락 양방향 해결, 감시 주기 30분 → 30초 외부화
+
 **AI**
- 
+
 - **MFDS Fallback** — MFDS API 장애/타임아웃 시 Spring AI + OpenAI 기반 약물 검색 자동 전환. MFDS 결과 Redis 캐싱(TTL 24h), AI 생성 결과 별도 캐싱(TTL 7일)으로 동일 약물명 재검색 시 외부 호출 제거
 - **AI 가드레일 (L1~L8)** — 프롬프트 인젝션 방어 및 API 비용 누수 방지를 위한 8계층 방어 아키텍처 직접 설계
 <details>
@@ -68,14 +69,17 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 > 흐름: Gateway → Normalization → Regex → Prompt Isolation → AI 분류 → Core LLM → Canary → Resilience
  
 </details>
+<br>
 
 **Frontend**
  
 - **대시보드 최적화** — `zustand/shallow` + `React.memo` + 스토어 캐싱으로 불필요한 리렌더링 제거. Playwright 측정 기준 초기 로딩 40%↓ (2.5초 → 1.5초), 탭 전환 Zero-Latency
+<br>
+
 **기타**
  
 - **PDF 리포트** — 지병/복약 목록 + 최근 30일 순응도(파이 차트) PDF 생성, OpenPDF 한글 폰트 임베딩
----
+
  
 👉 [GitHub Organization](https://github.com/KOSA2025-FINAL-PROJECT-TEAM3)
 
