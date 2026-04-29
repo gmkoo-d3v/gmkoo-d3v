@@ -23,7 +23,7 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 
 > ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white) ![Spring AI](https://img.shields.io/badge/Spring_AI-6DB33F?style=flat-square&logo=spring&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) ![Zustand](https://img.shields.io/badge/Zustand-20232a?style=flat-square&logo=react&logoColor=61DAFB) ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![Docker Compose](https://img.shields.io/badge/Docker_Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
 
-부트캠프 3차 팀 프로젝트 (3인) | 2025.11 ~ 2025.12 | Backend 설계 · AI 연동 · Frontend 성능 최적화 담당
+부트캠프 3차 팀 프로젝트 (3인) | 2025.11 ~ 2025.12 | 가족그룹·병원예약·질병·알약검색 풀스택 설계 · AI Fallback·가드레일 아키텍처 설계 · 알림 Fail-Safe 설계 담당
 
 #### 주요 성과
 
@@ -55,7 +55,7 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 | L2 | Normalization | 공백·Zero-width·전각문자 정규화로 불가시 문자 기반 우회 인젝션 차단 (ICU4J) |
 | L3 | Regex Guard | 표준 jailbreak 패턴(ignore/override/act-as 계열) Regex 탐지 및 스트라이크 누적 |
 | L4 | Prompt Isolation | XML 태그 기반 입력 격리로 인젝션 차단 |
-| L5 | gpt Mini | gpt-4o-mini로 입력을 DRUG / SYMPTOM / GENERAL_CHAT 3분류, GENERAL_CHAT 판별 시 즉시 차단 |
+| L5 | 경량 분류 모델 | 입력을 DRUG / SYMPTOM / GENERAL_CHAT 3분류, GENERAL_CHAT 판별 시 즉시 차단. Core LLM 비용 절감 목적으로 저비용 모델 선행 배치 |
 | L6 | Core LLM | 검증 통과 요청만 메인 모델 실행 |
 | L7 | Canary Token | 응답에 `CANARY_` 토큰 포함 감지 시 즉시 PERMANENT_BAN 처리 |
 | L8 | Resilience | abuse/bust 로그 기반 이상 트래픽 탐지 |
