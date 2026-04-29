@@ -19,17 +19,12 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 
 ---
 
-
-
-
 ### 💊 뭐냑 (AMApill) — MSA 기반 복약 관리 플랫폼
 
 > ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white) ![Spring AI](https://img.shields.io/badge/Spring_AI-6DB33F?style=flat-square&logo=spring&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) ![Zustand](https://img.shields.io/badge/Zustand-20232a?style=flat-square&logo=react&logoColor=61DAFB) ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![Docker Compose](https://img.shields.io/badge/Docker_Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
  
 부트캠프 3차 팀 프로젝트 (3인) | 2025.11 ~ 2025.12 | Backend 설계 · AI 연동 · Frontend 성능 최적화 담당
  
-</br>
-
 #### 주요 성과
  
 | 항목 | Before | After | 개선 |
@@ -37,8 +32,6 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 | 반복 조회 쿼리 수 | 197건 | 3건 | **98.5%↓** |
 | 대시보드 초기 로딩 | 2.5초 | 1.5초 | **40%↓** |
 | 약물 검색 재조회 | 외부 API/AI 재호출 | Redis cache hit | **동일 약물명 재검색 시 Redis cache hit으로 즉시 응답** |
- 
-<br>
  
 #### 담당 구현
  
