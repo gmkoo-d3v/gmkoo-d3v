@@ -55,7 +55,7 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 | L2 | Normalization | 공백·Zero-width·전각문자 정규화로 불가시 문자 기반 우회 인젝션 차단 (ICU4J) |
 | L3 | Regex Guard | 표준 jailbreak 패턴(ignore/override/act-as 계열) Regex 탐지 및 스트라이크 누적 |
 | L4 | Prompt Isolation | XML 태그 기반 입력 격리로 인젝션 차단 |
-| L5 | AI Nano | gpt-4o-mini로 입력을 DRUG / SYMPTOM / GENERAL_CHAT 3분류, GENERAL_CHAT 판별 시 즉시 차단 |
+| L5 | gpt Mini | gpt-4o-mini로 입력을 DRUG / SYMPTOM / GENERAL_CHAT 3분류, GENERAL_CHAT 판별 시 즉시 차단 |
 | L6 | Core LLM | 검증 통과 요청만 메인 모델 실행 |
 | L7 | Canary Token | 응답에 `CANARY_` 토큰 포함 감지 시 즉시 PERMANENT_BAN 처리 |
 | L8 | Resilience | abuse/bust 로그 기반 이상 트래픽 탐지 |
