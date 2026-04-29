@@ -85,30 +85,30 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 ### 🔍 Documind — AI 기반 문서 분석 RAG 시스템
 > ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white) ![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B35?style=flat-square) ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=flat-square&logo=sqlite&logoColor=white)
 
-POC 프로젝트 (3인) | 2026.01
-
-
+POC 프로젝트 (3인) | 2026.01 | 로컬 환경 구동  
+담당: Target Optimizer, Hybrid RAG, Multi-Provider Vector DB, 결과 Export
 
 #### 담당 구현
 
-### RAG / Retrieval Pipeline
+##### Target Optimizer / Actor-Critic
+- 사용자 대상(`public`, `student`, `worker`, `expert`)별 문서 리라이팅 기능을 구현했습니다.
+- Actor-Critic 루프를 적용해 생성 결과를 평가하고, 점수 미달 시 재시도/수락/자동 진행을 선택할 수 있는 인터랙션 흐름을 설계했습니다.
+- 우수 결과를 best-practice로 저장해 이후 최적화 과정에서 재사용할 수 있도록 구성했습니다.
 
-- 문서 Q&A용 RAG는 업로드 문서를 chunk 단위로 분리한 뒤, embedding 기반 인메모리 index를 생성해 검색하도록 구현했습니다.
-- Target Optimizer의 best-practice 검색에는 ChromaDB 저장소와 BM25를 결합한 hybrid retrieval을 적용했습니다.
-- 검색 점수는 embedding similarity 0.6, BM25 0.4 가중치로 계산했습니다.
-- ChromaDB 조회 실패나 조건 미일치 상황에서는 예외 전파를 줄이고 빈 결과 또는 전체 컬렉션 재조회로 처리하는 fail-soft 흐름을 적용했습니다.
+##### RAG / Retrieval Pipeline
+- Target Optimizer의 best-practice 검색에 ChromaDB 기반 vector search와 BM25 keyword search를 결합한 hybrid retrieval을 적용했습니다.
+- 검색 점수는 embedding similarity 0.6, BM25 0.4 가중치로 계산해 의미 유사도와 키워드 일치도를 함께 반영했습니다.
+- ChromaDB 컬렉션 미존재, 조회 실패, target_level 조건 미일치 상황에서 전체 플로우가 중단되지 않도록 fail-soft/fallback 처리를 적용했습니다.
 
-#### Architecture
+##### Architecture
+- **Multi-Provider Vector DB** — OpenAI, Gemini, Ollama 등 임베딩 프로바이더별 ChromaDB 컬렉션을 분리해 벡터 차원 불일치와 데이터 혼합 문제를 방지했습니다.
+- **Provider Abstraction** — Ollama(로컬), Gemini, Claude, OpenAI provider를 설정 기반으로 전환할 수 있도록 구성해 API 비용과 실행 환경 의존성을 줄였습니다.
 
-- **Provider Abstraction** — Ollama / Gemini / Claude / OpenAI 4개 프로바이더를 추상화 레이어로 통합. 프로바이더 교체 시 RAG 핵심 로직 수정 없이 전환 가능한 구조 설계
-
-#### Data
-
-- **Metadata Management** — SQLite 기반 문서 메타데이터 관리 체계 도입. 문서 추적성 확보 및 운영 관점 관리 효율 향상
-- **Document Stability** — 한글 UTF-8 BOM 처리 및 PDF 출력 호환성 개선으로 문서 파이프라인 안정성 강화
+##### Data / Operations
+- **Metadata Management** — SQLite 기반 분석 이력 및 메타데이터 조회 흐름을 정리하고, SQLite/ChromaDB Explorer에서 저장 상태를 확인할 수 있도록 개선했습니다.
+- **Export Stability** — TXT UTF-8 BOM, PDF 한글 폰트 처리, DOCX/PDF/ZIP 내보내기를 지원해 분석 결과 공유성을 높였습니다.
 
 👉 [GitHub](https://github.com/gmkoo-d3v/AIPOC)
-
 ---
 
 ### 🧭 ZeniManager — AI 기반 취업 지원 상담 관리 시스템
