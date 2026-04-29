@@ -23,7 +23,10 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 
 > ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white) ![Spring AI](https://img.shields.io/badge/Spring_AI-6DB33F?style=flat-square&logo=spring&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) ![Zustand](https://img.shields.io/badge/Zustand-20232a?style=flat-square&logo=react&logoColor=61DAFB) ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![Docker Compose](https://img.shields.io/badge/Docker_Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
 
-부트캠프 3차 팀 프로젝트 (3인) | 2025.11 ~ 2025.12 | 가족그룹·병원예약·질병·알약검색 풀스택 설계 · AI Fallback·가드레일 아키텍처 설계 · 알림 Fail-Safe 설계 담당
+부트캠프 3차 팀 프로젝트 (3인) | 2025.11 ~ 2025.12 
+
+#### 담당 설계 및 구현
+가족그룹·병원예약·질병·알약검색 풀스택 설계 · AI Fallback·가드레일 아키텍처 설계 · 알림 Fail-Safe 설계 담당
 
 #### 주요 성과
 
@@ -33,11 +36,11 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 | 대시보드 초기 로딩 | 2.5초 | 1.5초 | **40%↓** |
 | 약물 검색 재조회 | 외부 API/AI 재호출 | Redis cache hit | **동일 약물명 재검색 시 Redis cache hit으로 즉시 응답** |
 
-#### 담당 구현
+#### 트러블 슈팅
 
 **Backend**
 <br>
-- **N+1 개선** — 복약 로그 조회 API 루프 내 `findById()` 단건 호출을 MyBatis IN절 + Map 일괄 조회로 재설계. 90건 기준 쿼리 197개 → 3개 (98.5%↓), 응답 3~5초 → 0.5초 이하 (Issue #112)
+- **N+1 개선** — 복약 로그 조회 API 루프 내 `findById()` 단건 호출을 MyBatis IN절 + Map 일괄 조회로 재설계. 90건 기준 쿼리 197개 → 3개 (98.5%↓), 응답 3~5초 → 0.5초 이하
 - **알림 Fail-Safe** — 알림 정책 오류 시 `shouldSend` 예외를 false로 처리(Block-by-default), DB 스키마 변경 없이 Redis State Overlay로 우회. 오발송·누락 양방향 해결, 감시 주기 30분 → 30초 외부화
 
 **AI**
