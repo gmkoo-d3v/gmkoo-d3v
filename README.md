@@ -130,6 +130,7 @@ POC 프로젝트 (3인) | 2026.01
 
 
 👉 [GitHub Repository](https://github.com/SuranS2/ZeniManager)
+
 ---
 
 ### 🧭 CodeGuide — LLM 협업 워크플로우 프레임워크
