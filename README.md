@@ -23,21 +23,69 @@ AI를 활용해 실동작하는 서비스를 만드는 개발자입니다.
 
 
 ### 💊 뭐냑 (AMApill) — MSA 기반 복약 관리 플랫폼
-> ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white) ![Spring AI](https://img.shields.io/badge/Spring_AI-6DB33F?style=flat-square&logo=spring&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) ![Zustand](https://img.shields.io/badge/Zustand-20232a?style=flat-square&logo=react&logoColor=61DAFB) ![MUI](https://img.shields.io/badge/MUI-0081CB?style=flat-square&logo=mui&logoColor=white) ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) ![PostgreSQL_Vector_Store](https://img.shields.io/badge/PostgreSQL_Vector_Store-316192?style=flat-square&logo=postgresql&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![Docker Compose](https://img.shields.io/badge/Docker_Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
 
-부트캠프 3차 팀 프로젝트 (3인) | 2025.11 ~ 2025.12 (7주 MVP)
+> ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white) ![Spring AI](https://img.shields.io/badge/Spring_AI-6DB33F?style=flat-square&logo=spring&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) ![Zustand](https://img.shields.io/badge/Zustand-20232a?style=flat-square&logo=react&logoColor=61DAFB) ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![Docker Compose](https://img.shields.io/badge/Docker_Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
 
-**담당 역할 및 구현 내용**
-- **AI 연동/가용성 개선**: MFDS 공공 API 장애/타임아웃 시 `Spring AI + OpenAI` 기반 약물 검색 Fallback 구현, `GET /api/medications/search/ai` 엔드포인트 추가로 자동/수동 AI 검색 흐름 통합.
-- **AI 보안 / 가드레일 설계**: 프롬프트 인젝션 방어 및 API 비용 누수를 막기 위해 8계층 다층 방어(L1~L8) 아키텍처 고안. 의도 판별(Intent) 캐싱, Redis 카운터 기반 3진 아웃제, Canary Token(킬스위치)을 융합하여 악성 트래픽을 시스템적으로 원천 차단.
-- **프론트엔드 주도 개발**: React + Vite + Zustand 기반 구조 설계/구현, `zustand/shallow` + `React.memo` + 스토어 캐싱으로 대시보드 초기 로딩 **40% 단축** 및 탭 전환 **Zero-Latency** 구현.
-- **백엔드 기능 개발**: 가족 그룹/초대 관리 및 질병 정보 도메인(CRUD) 중심 비즈니스 로직 구현.
-- **리포트 기능**: 지병/복약 목록/최근 30일(당일 제외) 순응도(약별·전체 파이 차트) 포함 PDF 생성, 한글 폰트 임베딩(OpenPDF)·
-- **성능 최적화**: 백엔드 예외 처리(Fail-Safe): 알림 시스템 정책 오류 시, DB 스키마 롤백 없이 Redis 기반 상태 오버레이(State Overlay) 로직을 우회 구축하여 무중단 이슈 해결.
-- **캐싱**: Redis(TTL 24h) 적용으로 AI 약물 검색 속도 **70% 향상** (`2.5s -> 0.75s`).
+부트캠프 3차 팀 프로젝트 (3인) | 2025.11 ~ 2025.12 | **프로젝트 우수상 수상**  
+Backend 설계 · AI 연동 · Frontend 성능 최적화 담당
 
-> 💡 **한 줄 요약**
-> 가족 중심 어르신 복약 플랫폼 AMApill에서, 8계층 AI 가드레일 보안설계·MFDS 장애 대응 AI Fallback·프론트 성능 최적화(40%)·Redis 캐싱(70%)·N+1 개선(98.5%)을 중심으로 Full-Stack 기능을 구현했습니다.
+---
+
+#### 📊 주요 성과
+
+| 항목 | Before | After | 개선 |
+|------|--------|-------|------|
+| 반복 조회 쿼리 수 | 197건 | 3건 | **98.5%↓** |
+| 대시보드 초기 로딩 | 2.5초 | 1.5초 | **40%↓** |
+| 약물 검색 재조회 | 외부 API/AI 재호출 | Redis cache hit | **외부 호출 제거** |
+
+---
+
+#### 🔧 담당 구현
+
+**[Backend] N+1 반복 조회 구조 개선**
+- 복약 로그 조회 API에서 루프 내 `findById()` 단건 호출 패턴 식별
+- MyBatis IN절 + Map 기반 일괄 조회로 재설계
+- 90건 기준 쿼리 197개 → 3개 (98.5%↓), 응답 3~5초 → 0.5초 이하 (Issue #112)
+
+**[Backend] 알림 시스템 Fail-Safe 설계**
+- 알림 정책 오류 발생 시 DB 스키마 롤백 없이 Redis State Overlay로 우회 처리
+- 무중단 운영 구조 확보, Kafka + SSE 기반 실시간 알림 흐름 개선
+- 감시 주기 30분 → 30초 단축
+
+**[AI] MFDS 공공 API 장애 대응 Fallback 구조**
+- MFDS API 타임아웃/장애 시 Spring AI + OpenAI 기반 약물 검색으로 자동 전환
+- `GET /api/medications/search/ai` 엔드포인트로 자동/수동 AI 검색 흐름 통합
+- MFDS 검색 결과 Redis 캐싱 (TTL 24h), AI 생성 결과 별도 캐싱 (TTL 7일)
+- 동일 약물명 재검색 시 MFDS/OpenAI 재호출 없이 캐시 결과 반환 (외부 호출 제거)
+- 약물·질병 정보는 변경 빈도가 낮아 장기 TTL 적용 가능
+
+**[AI] 다층 방어 가드레일 설계 (L1~L8)**
+- 프롬프트 인젝션 방어 및 API 비용 누수 방지를 위한 8계층 방어 아키텍처 직접 설계
+
+| Layer | 명칭 | 역할 |
+|-------|------|------|
+| L1 | Gateway Network | 네트워크 레벨 진입 차단 |
+| L2 | Normalization | 입력 정규화 및 전처리 |
+| L3 | Regex Guard | jailbreak 패턴 Regex 탐지 및 차단 |
+| L4 | Prompt Isolation | XML 태그 기반 입력 격리로 인젝션 차단 |
+| L5 | AI Nano | GPT-4o-nano로 의도 분류 — 약물/질병 관련 여부 true/false 판별, 무관 요청 즉시 차단 |
+| L6 | Core LLM | 검증 통과 요청만 메인 모델 실행 |
+| L7 | Canary Token | 킬스위치 삽입으로 응답 유출 및 탈취 감지 |
+| L8 | Resilience | abuse/bust 로그 기반 이상 트래픽 탐지 |
+
+> 흐름: Gateway 진입 → Regex 탐지 → AI 의도 분류 → Core LLM 실행 → Canary 감지 → 이상 로깅
+
+**[Frontend] 대시보드 성능 최적화**
+- `zustand/shallow` + `React.memo` + 스토어 캐싱으로 불필요한 리렌더링 제거
+- 탭 전환 Zero-Latency 구현
+- Playwright 기반 자동화 측정으로 초기 로딩 40% 단축 확인 (2.5초 → 1.5초)
+
+**[기능] PDF 리포트 생성**
+- 지병/복약 목록 + 최근 30일 순응도(파이 차트) 포함 PDF 자동 생성
+- OpenPDF 기반 한글 폰트 임베딩 처리
+
+---
 
 👉 [GitHub Organization](https://github.com/KOSA2025-FINAL-PROJECT-TEAM3)
 
