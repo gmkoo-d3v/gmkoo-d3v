@@ -108,7 +108,8 @@ POC 프로젝트 (3인) | 2026.01 | 로컬 환경 구동
 - **Metadata Management** — SQLite 기반 분석 이력 및 메타데이터 조회 흐름을 정리하고, SQLite/ChromaDB Explorer에서 저장 상태를 확인할 수 있도록 개선했습니다.
 - **Export Stability** — TXT UTF-8 BOM, PDF 한글 폰트 처리, DOCX/PDF/ZIP 내보내기를 지원해 분석 결과 공유성을 높였습니다.
 
-👉 [GitHub](https://github.com/gmkoo-d3v/AIPOC)
+👉 [GitHub Repository](https://github.com/gmkoo-d3v/AIPOC)
+
 ---
 
 ### 🧭 ZeniManager — AI 기반 취업 지원 상담 관리 시스템
@@ -153,7 +154,7 @@ LLM을 코드 타이핑에 위임하고, 설계·의사결정·검증은 직접 
 - **멀티 에이전트 역할 분리** — supervising lead architect(메인) + 계획·리뷰·구현·검증 서브에이전트로 협업 구조 정의
 - **5축 의사결정 기록** — Why / What / How / Where / Verify 기준으로 모든 설계 결정을 추적 가능하게 문서화
 
-  👉 [GitHub Repository](https://github.com/gmkoo-d3v/codeguide)
+👉 [GitHub Repository](https://github.com/gmkoo-d3v/codeguide)
 
 ---
 
